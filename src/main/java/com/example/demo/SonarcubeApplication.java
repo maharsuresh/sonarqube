@@ -8,7 +8,7 @@ public class SonarcubeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SonarcubeApplication.class, args);
-		System.out.println("hello");
+		System.out.println("hello world");
 	}
 
 }
