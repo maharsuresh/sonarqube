@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source environment
-#source ~/.bashrc
+source ~/.bashrc
 
 export SONAR_VERSION="4.1.0.1829"
 
@@ -12,7 +12,7 @@ if [ ! -f sonarscanner.zip ]; then
 fi
 
 SONAR_HOME=`find "$PWD" -type d -name 'sonar-scanner*'`
-if [! "$SONAR_HOME" =~ sonar-scanner]; then
+if [[ ! "$SONAR_HOME" =~ sonar-scanner ]]; then
     echo "Failed to setup sonar binaries"
     exit
 else
