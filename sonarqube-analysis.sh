@@ -87,8 +87,10 @@ getSonarParams() {
 
 
 parseArgs() {
-
-    while [ $# -gt 0 ]; do
+    echo "This is in parseArgs::::::::::::::::::::::::"
+    while [ "$#" -gt 0 ]; do
+    echo "$0"
+    echo "$1"
         case "$1" in
             --current-branch=*)         currentBranch="${1#*=}" ;;      # sonar.branch.name
             --target-branch=*)          targetBranch="${1#*=}" ;;       # sonar.branch.target
