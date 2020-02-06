@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source environment
-#source ~/.bashrc
+source ~/.bashrc
 
 export SONAR_VERSION="4.1.0.1829"
 
@@ -75,8 +75,8 @@ usage() {
 
 getSonarParams() {
     
-    [ ! -z "$currentBranch" ]     && SONAR_PARAMS+=("-Dsonar.branch.name=$currentBranch")
-    [ ! -z "$targetBranch" ]      && SONAR_PARAMS+=("-Dsonar.branch.target=$targetBranch")
+    [ ! -z "$currentBranch" ]     && SONAR_PARAMS+=( "-Dsonar.branch.name=$currentBranch" )
+    [ ! -z "$targetBranch" ]      && SONAR_PARAMS+=( "-Dsonar.branch.target=$targetBranch" )
     [ ! -z "$prCurrentBranch" ]   && SONAR_PARAMS+=("-Dsonar.pullrequest.branch=$prCurrentBranch")
     [ ! -z "$prBaseBranch" ]      && SONAR_PARAMS+=("-Dsonar.pullrequest.base=$prBaseBranch")
     [ ! -z "$pullRequestKey" ]    && SONAR_PARAMS+=("-Dsonar.pullrequest.key=$pullRequestKey")
