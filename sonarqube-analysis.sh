@@ -148,8 +148,8 @@ SONAR_PARAMS=()
 
 case $1
 in
-   repo)    shift 1; parseArgs $@; repoAnalysis ;;
-   branch)  shift 1; parseArgs $@; branchAnalysis ;;
-   pr)      shift 1; parseArgs $@; prAnalysis ;;
+   repo)    shift 1; parseArgs "$@"; repoAnalysis ;;
+   branch)  shift 1; parseArgs "$@"; branchAnalysis ;;
+   pr)      shift 1; parseArgs "$@"; prAnalysis ;;
    *)       echo "Invalid argument passed" ; usage ;;
 esac
