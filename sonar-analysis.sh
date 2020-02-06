@@ -24,7 +24,7 @@ export PATH=$PATH:$SONAR_HOME/bin
 
 # assuming below structure
 # $project-root/sonar-analysis, navigating to project root
-#cd ../
+cd ../
 
 echo "Running sonar-scanner from: $PWD"
 
