@@ -11,6 +11,17 @@ if [ ! -f sonarscanner.zip ]; then
     unzip sonarscanner.zip
 fi
 
+args=("$@") 
+# get number of elements 
+ELEMENTS=${#args[@]} 
+ 
+# echo each element in array  
+# for loop 
+for (( i=0;i<$ELEMENTS;i++)); do 
+    echo ${args[${i}]} 
+done
+
+
 SONAR_HOME=`find "$PWD" -type d -name 'sonar-scanner*'`
 if [[ ! "$SONAR_HOME" =~ sonar-scanner ]]; then
     echo "Failed to setup sonar binaries"
@@ -148,8 +159,6 @@ SONAR_PARAMS=()
 
 case "$1"
 
-echo "argument:" '$1'
-#echo "All argument: $@"
 in
    repo)    shift 1; parseArgs "$@"; repoAnalysis ;;
    branch)  shift 1; parseArgs "$@"; branchAnalysis ;;
