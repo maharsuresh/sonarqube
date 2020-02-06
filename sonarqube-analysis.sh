@@ -8,7 +8,7 @@ export SONAR_VERSION="4.1.0.1829"
 #Download the sonar scanner binaries
 if [ ! -f sonarscanner.zip ]; then
     curl -H "Accept: application/zip" https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_VERSION.zip -o sonarscanner.zip
-    unzip sonarscanner
+    unzip sonarscanner.zip
 fi
 
 
