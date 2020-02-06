@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source environment
-source ~/.bashrc
+ .~/.bashrc
 
 export SONAR_VERSION="4.1.0.1829"
 
