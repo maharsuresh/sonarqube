@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Source environment
-#source ~/.bashrc
+source ~/.bashrc
 
 export SONAR_VERSION="4.1.0.1829"
 
@@ -10,16 +10,6 @@ if [ ! -f sonarscanner.zip ]; then
     curl -H "Accept: application/zip" https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_VERSION.zip -o sonarscanner.zip
     unzip sonarscanner
 fi
-
-args=("$@") 
-# get number of elements 
-ELEMENTS=${#args[@]} 
- 
-# echo each element in array  
-# for loop 
-for (( i=0;i<$ELEMENTS;i++)); do 
-    echo ${args[${i}]} 
-done
 
 
 SONAR_HOME=`find "$PWD" -type d -name 'sonar-scanner*'`
@@ -98,10 +88,8 @@ getSonarParams() {
 
 
 parseArgs() {
-    echo "This is in parseArgs::::::::::::::::::::::::"
-    while [ "$#" -gt 0 ]; do
-    echo "$0"
-    echo "$1"
+    while [ $# -gt 0 ]; do
+   
         case "$1" in
             --current-branch=*)         currentBranch="${1#*=}" ;;      # sonar.branch.name
             --target-branch=*)          targetBranch="${1#*=}" ;;       # sonar.branch.target
@@ -124,7 +112,7 @@ parseArgs() {
 execSonar() {
 
     echo "Issuing sonar-scanner command from: " `pwd`
-    sonar-scanner ${SONAR_PARAMS "$@"}
+    sonar-scanner ${SONAR_PARAMS [$@]}
 }
 
 repoAnalysis() {
@@ -157,11 +145,11 @@ prAnalysis() {
 
 SONAR_PARAMS=()
 
-case "$1"
+case $1
 
 in
-   repo)    shift 1; parseArgs "$@"; repoAnalysis ;;
-   branch)  shift 1; parseArgs "$@"; branchAnalysis ;;
-   pr)      shift 1; parseArgs "$@"; prAnalysis ;;
+   repo)    shift 1; parseArgs $@; repoAnalysis ;;
+   branch)  shift 1; parseArgs $@; branchAnalysis ;;
+   pr)      shift 1; parseArgs $@; prAnalysis ;;
    *)       echo "Invalid argument passed" ; usage ;;
 esac
