@@ -148,8 +148,8 @@ SONAR_PARAMS=()
 
 case "$1"
 
-echo "argument: $1"
-echo "All argument: $@"
+echo "argument:" '$1'
+#echo "All argument: $@"
 in
    repo)    shift 1; parseArgs "$@"; repoAnalysis ;;
    branch)  shift 1; parseArgs "$@"; branchAnalysis ;;
