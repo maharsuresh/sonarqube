@@ -124,7 +124,7 @@ parseArgs() {
 execSonar() {
 
     echo "Issuing sonar-scanner command from: " `pwd`
-    sonar-scanner ${SONAR_PARAMS $@}
+    sonar-scanner ${SONAR_PARAMS "$@"}
 }
 
 repoAnalysis() {
