@@ -3,7 +3,7 @@
 # Source environment
 source ~/.bashrc
 
-export SONAR_VERSION="4.1.0.1829"
+export SONAR_VERSION="4.2.0.1873"
 
 #Download the sonar scanner binaries
 if [ ! -f sonarscanner.zip ]; then
