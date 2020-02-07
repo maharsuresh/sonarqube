@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 #Source environment
-#source ~/.bashrc
+source ~/.bashrc
 #source ~/.bash_profile
-source /home/suresh/.bashrc
+#source /home/suresh/.bashrc
 
 export SONAR_VERSION="4.1.0.1829"
 
