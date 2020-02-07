@@ -1,10 +1,10 @@
 #!/bin/sh
 
 #Source environment
-source ~/.bashrc
-#source ~/.bash_profile
-#source /home/suresh/.bashrc
-
+#source ~/.bashrc
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
 export SONAR_VERSION="4.1.0.1829"
 
 #Download the sonar scanner binaries
