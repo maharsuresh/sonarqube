@@ -7,6 +7,7 @@ if [ -f ~/.bashrc ]; then
 fi
 export SONAR_VERSION="4.1.0.1829"
 
+echo "inside the sonar-analysis..."
 #Download the sonar scanner binaries
 if [ ! -f sonarscanner.zip ]; then
     curl -H "Accept: application/zip" https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_VERSION.zip -o sonarscanner.zip
