@@ -1,4 +1,4 @@
-
+#!/bin/sh
 #Source environment
 #source ~/.bashrc
 if [ -f ~/.bashrc ]; then
