@@ -1,8 +1,6 @@
-#!/bin/sh
-#Source environment
-source ~/.bashrc
-
-
-export SONAR_VERSION="4.1.0.1829"
-
-echo "inside the sonar-analysis..."
+#usr/bin/sh
+if [$1 -lt $2]; then
+echo "done"
+else
+echo "nope"
+fi
